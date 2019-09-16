@@ -15,16 +15,16 @@ int main()
 	ar2.show();
 	cout << "\n";
 	
-	//MyArray ar3 = ar1;
-	//ar3.addCapacity(2);
-	//ar3[ar3.getCapacity() - 1] = 3;
-	//ar3.show();
-	//cout << "\n\n\n";
-	//
-	//ar1.show();
-	//cout << "\n";
-	//ar2.show();
-	//cout << "\n";
+	MyArray ar3 = ar1;
+	ar3.addCapacity(2);
+	ar3[ar3.getCapacity() - 1] = 3;
+	ar3.show();
+	cout << "\n\n\n";
+	
+	ar1.show();
+	cout << "\n";
+	ar2.show();
+	cout << "\n";
 
 	system("pause");
 	return 0;

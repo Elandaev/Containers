@@ -45,10 +45,14 @@ void MyArray::show() const
 void MyArray::addCapacity(int n)
 {
 	size += n;
-	ar = new int[size];
-	for (int i = 0; i < size; i++) {
-		this->ar[i] = ar[i];
+	int *arr = new int[size];
+	for (int i = 0; i < size-n; i++) {
+		arr[i] = this->ar[i];
 	}
+	for (int i = size - n; i < size; i++) {
+		arr[i] = 0;
+	}
+	this->ar = arr;
 }
 
 int & MyArray::operator[](int index)
