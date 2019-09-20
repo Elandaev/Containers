@@ -52,6 +52,7 @@ void MyArray::addCapacity(int n)
 	for (int i = size - n; i < size; i++) {
 		arr[i] = 0;
 	}
+	delete[]this->ar;
 	this->ar = arr;
 }
 

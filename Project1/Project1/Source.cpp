@@ -15,7 +15,7 @@ int main()
 	ar2.show();
 	cout << "\n";
 	
-	MyArray ar3 = ar1;
+	MyArray ar3 = ar2;
 	ar3.addCapacity(2);
 	ar3[ar3.getCapacity() - 1] = 3;
 	ar3.show();
