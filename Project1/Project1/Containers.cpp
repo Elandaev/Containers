@@ -3,7 +3,8 @@
 using namespace std;
 MyArray::MyArray()
 {
-	ar = new int[size];
+	size = 0;
+	ar = NULL;
 }
 
 MyArray::MyArray(int n)
@@ -56,19 +57,29 @@ void MyArray::addCapacity(int n)
 	this->ar = arr;
 }
 
-int & MyArray::operator[](int index)
+int & MyArray::operator[](int index) 
 {
 	return  ar[index];
 }
 
 MyArray & MyArray::operator=(const MyArray & ar)
 {
-	return *this;
+	if (this == &ar) {
+		return *this;
+	}
+	size = ar.size;
+	int *arr = new int[size];
+	for (int i = 0; i < size; i++) {
+		arr[i] = ar.ar[i];
+	}
+	delete[]this->ar;
+	this->ar = arr;
 }
 
 MyArray::~MyArray()
 {
 	delete[] ar;
+	size = NULL;
 }
 
 Container::~Container()

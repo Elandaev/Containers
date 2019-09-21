@@ -16,6 +16,7 @@ public:
 
 class MyArray : public Container
 {
+protected:
 	int *ar;
 public:
 	MyArray();
