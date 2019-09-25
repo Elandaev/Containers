@@ -84,7 +84,7 @@ void MyVector::insert(int index, int val)
 		}
 		this->ar[index] = val;
 	}
-	else {
+	if (index >= capacity) {
 		capacity = index;
 		int *arr = new int[capacity];
 		for (int i = 0; i < getSize(); i++) {
@@ -96,6 +96,20 @@ void MyVector::insert(int index, int val)
 		arr[capacity] = val;
 		this->ar = arr;
 	}
+	if (index < capacity && getSize() >= capacity) {
+		capacity++;
+		int *arr = new int[capacity];
+		for (int i = 0; i < index; i++) {
+			arr[i] = this->ar[i];
+		}
+		arr[index] = val;
+		for (int i = index + 1; i < capacity; i++) {
+			arr[i] = this->ar[i - 1];
+		}
+		this->ar = arr;
+	}
+		
+	
 }
 
 int MyVector::remove(int index)
