@@ -27,7 +27,11 @@ MyArray::MyArray(const MyArray & ar)
 
 int MyArray::getSize() const
 {
-	return this->size;
+	for (int i = getCapacity() - 1; i >= 0; i--) {
+		if (ar[i] != 0)
+			return (i + 1);
+	}
+	return 0;
 }
 
 int MyArray::getCapacity() const
@@ -37,7 +41,7 @@ int MyArray::getCapacity() const
 
 void MyArray::show() const
 {
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < getCapacity(); i++) {
 		cout << ar[i] << " ";
 	}
 	cout << endl;

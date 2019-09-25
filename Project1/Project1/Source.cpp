@@ -27,7 +27,7 @@ int main()
 	ar3.pushBack(8);
 	ar3.show();
 	cout << "\n";
-	
+
 	ar3.remove(0);
 	ar3.insert(1, 5);
 	ar3.show();
